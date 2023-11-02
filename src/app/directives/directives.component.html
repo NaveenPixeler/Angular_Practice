@@ -1,0 +1,53 @@
+<h4>Attribute Directives</h4>
+<ul class="list-group">
+  <li class="list-group-item" [ngClass]="true && 'text-primary'">ngClass</li>
+  <li
+    class="list-group-item"
+    [ngStyle]="
+      1
+        ? { 'background-color': 'dodgerblue', color: 'white' }
+        : { 'background-color': 'blue' }
+    "
+  >
+    ngStyle
+  </li>
+  <li class="list-group-item">
+    <small>ngModel</small>
+    <select
+      class="form-select mt-2"
+      aria-label="Default select example"
+      [(ngModel)]="selectThis"
+    >
+      <option selected disabled>Open this select menu</option>
+      <option *ngFor="let obj of numbersAsText" [value]="obj.num">
+        {{ obj.num }}
+      </option>
+    </select>
+  </li>
+</ul>
+
+<h4 class="mt-4">Structural Directives</h4>
+<div *ngIf="true">*ngIf</div>
+<small>*ngFor</small>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of numbersAsText; index as i">
+      <td>{{ obj.id }}</td>
+      <td>{{ obj.num }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<small>*ngSwitch</small>
+<div [ngSwitch]="messageType">
+  <div *ngSwitchCase="'success'" class="alert alert-success">This is a success message.</div>
+  <div *ngSwitchCase="'warning'" class="alert alert-warning">This is a warning message.</div>
+  <div *ngSwitchCase="'error'" class="alert alert-error">This is an error message.</div>
+  <div *ngSwitchDefault>No message to display.</div>
+</div>
