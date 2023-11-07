@@ -1,2 +1,36 @@
-<p>post works!</p>
+<section *ngFor="let post of posts; index as i">
+  <div class="card w-25 mb-4 post-container">
+    <div class="image-container">
+      <img
+        role="button"
+        [src]="post.image"
+        class="card-img-top"
+        alt="user"
+        (dblclick)="onDoubleClickToLike(i)"
+      />
+      <div class="instagram-heart" [class.animate-heart]="post.anime"></div>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ post.caption }}</p>
+      <div class="icons-container d-flex align-items-center">
+        <ng-container *ngIf="post.isLiked; else isNotLiked">
+          <i
+            class="bi bi-heart-fill"
+            role="button"
+            (click)="toggleLikeButton(i)"
+          ></i>
+        </ng-container>
+        <ng-template #isNotLiked>
+          <i
+            class="bi bi-heart"
+            role="button"
+            (click)="toggleLikeButton(i)"
+          ></i>
+        </ng-template>
+        <i class="bi bi-chat ms-2" role="button"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
 <app-comments></app-comments>
