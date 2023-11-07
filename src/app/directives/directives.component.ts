@@ -15,4 +15,6 @@ export class DirectivesComponent {
   selectThis = 'One';
 
   messageType: string = 'warning';
+
+  isActive = false;
 }

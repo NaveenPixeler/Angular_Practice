@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FollowersComponent } from './profile/followers/followers.component';
 import { FollowingComponent } from './profile/following/following.component';
 import { PostComponent } from './post/post.component';
 import { CommentsComponent } from './post/comments/comments.component';
+import { LikesComponent } from './post/likes/likes.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { CommentsComponent } from './post/comments/comments.component';
     FollowersComponent,
     FollowingComponent,
     PostComponent,
-    CommentsComponent
+    CommentsComponent,
+    LikesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
