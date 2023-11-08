@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  randomNumber: number = 0;
 
   ngOnInit(): void {
     this.getRandomNumber();
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
   selectThis = "One";
 
   getRandomNumber() {
-    return Math.floor(Math.random() * 7);
+    this.randomNumber = Math.floor(Math.random() * 7);
   }
 
   onButtonClick() {

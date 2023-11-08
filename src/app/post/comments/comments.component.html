@@ -1,1 +1,5 @@
-<p>comments works!</p>
+<ul class="list-group d-flex" *ngFor="let comment of comments">
+  <li class="list-group-item">
+    @ {{ comment.user }}: {{ comment.description }}
+  </li>
+</ul>

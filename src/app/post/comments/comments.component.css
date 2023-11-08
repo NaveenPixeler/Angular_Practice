@@ -1,0 +1,11 @@
+.comments-container {
+    position: relative;
+}   
+
+.tooltip-box {
+  position: absolute;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}

@@ -1,5 +1,8 @@
-<section *ngFor="let post of posts; index as i">
-  <div class="card w-25 mb-4 post-container">
+<section class="post-container">
+  <div
+    class="card w-25 mb-4 post-container"
+    *ngFor="let post of posts; index as i"
+  >
     <div class="image-container">
       <img
         role="button"
@@ -27,10 +30,11 @@
             (click)="toggleLikeButton(i)"
           ></i>
         </ng-template>
-        <i class="bi bi-chat ms-2" role="button"></i>
+        <i class="bi bi-chat ms-2" role="button" (click)="toggleComment(i)"></i>
       </div>
     </div>
+    <ng-container *ngIf="post.isCommentOpened">
+      <app-comments [comments]="comments"></app-comments>
+    </ng-container>
   </div>
 </section>
-
-<app-comments></app-comments>
