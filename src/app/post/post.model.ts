@@ -4,6 +4,7 @@ export class Post {
     public image: string,
     public caption: string,
     public isLiked: boolean,
-    public anime: boolean
+    public anime: boolean,
+    public isCommentOpened: boolean
   ) {}
 }

@@ -2,7 +2,7 @@ export class Comment {
   constructor(
     public userId: number,
     public user: string,
-    public comment: string,
-    public likesCount: number 
+    public description: string,
+    public isOpened: boolean
   ) {}
 }
