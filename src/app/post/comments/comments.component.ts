@@ -27,7 +27,10 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddCommnet() {
-    this.sendComment.emit(this.commentInput.nativeElement.value);
+    const comment = this.commentInput.nativeElement.value
+    if(comment) {
+      this.sendComment.emit(comment);
+    }
     this.commentInput.nativeElement.value = "";
   }
 }
