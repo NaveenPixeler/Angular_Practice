@@ -1,5 +1,18 @@
-<ul class="list-group d-flex" *ngFor="let comment of comments">
-  <li class="list-group-item">
-    @ {{ comment.user }}: {{ comment.description }}
-  </li>
-</ul>
+<section class="comment-container">
+  <div class="d-flex mb-2 mx-2">
+    <input
+      type="text"
+      #comment
+      placeholder="Add comment"
+      class="form-control me-1"
+    />
+    <button class="btn btn-dark" (click)="onAddCommnet()">
+      <i class="bi bi-plus"></i>
+    </button>
+  </div>
+  <ul class="list-group d-flex mb-2" *ngFor="let comment of comments">
+    <li class="list-group-item mx-2">
+      @{{ comment.user }}: {{ comment.description }}
+    </li>
+  </ul>
+</section>
