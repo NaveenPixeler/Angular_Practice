@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Post } from './post.model';
 import { Comment } from './comments/comment.model';
 
@@ -6,8 +6,9 @@ import { Comment } from './comments/comment.model';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   posts: Post[] = [
     new Post(
       1,
@@ -33,6 +34,14 @@ export class PostComponent {
     new Comment(3, 'toe', "It's a Comment", false),
   ];
 
+  constructor() {
+  
+  }
+
+  ngOnInit(): void {
+    
+  }
+
   toggleLikeButton(index: number) {
     this.posts[index].isLiked = !this.posts[index].isLiked;
   }
@@ -48,5 +57,10 @@ export class PostComponent {
     setTimeout(() => {
       this.posts[index].anime = false;
     }, 1000);
+  }
+
+  ReceiveComment(event: string) {
+    let lastCommentId = this.comments[this.comments.length - 1].userId;
+    this.comments.push(new Comment(++lastCommentId, 'naveen', event, false));
   }
 }

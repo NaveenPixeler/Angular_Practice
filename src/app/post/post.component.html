@@ -34,7 +34,7 @@
       </div>
     </div>
     <ng-container *ngIf="post.isCommentOpened">
-      <app-comments [comments]="comments"></app-comments>
+      <app-comments [comments]="comments" (sendComment)="ReceiveComment($event)"></app-comments>
     </ng-container>
   </div>
 </section>
