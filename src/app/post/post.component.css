@@ -56,3 +56,7 @@ img {
     transform: scale(1);
   }
 }
+
+.liked-people-text {
+  opacity: .3;
+}
