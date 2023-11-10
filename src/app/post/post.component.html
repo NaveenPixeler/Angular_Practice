@@ -32,9 +32,15 @@
         </ng-template>
         <i class="bi bi-chat ms-2" role="button" (click)="toggleComment(i)"></i>
       </div>
+      <app-likes> 
+        <small class="liked-people-text">Liked by naveen and 17 others</small>
+      </app-likes>
     </div>
     <ng-container *ngIf="post.isCommentOpened">
-      <app-comments [comments]="comments" (sendComment)="ReceiveComment($event)"></app-comments>
+      <app-comments
+        [comments]="comments"
+        (sendComment)="ReceiveComment($event)"
+      ></app-comments>
     </ng-container>
   </div>
 </section>
