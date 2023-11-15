@@ -1,0 +1,9 @@
+
+<ul class="list-group">
+    <h4 class="list-group-item">Pipes</h4>
+    <li class="list-group-item">{{ textToUpperCase | uppercase }}</li>
+    <li class="list-group-item">{{ textToLowerCase | lowercase }}</li>
+    <li class="list-group-item">{{ price | currency }}</li>
+    <li class="list-group-item">{{ numberToDecimal | number: '1.2-2' }}</li>
+    <li class="list-group-item">{{ fractionToPercent | percent: '2.2-2' }}</li>
+</ul>

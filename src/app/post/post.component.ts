@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Post } from './post.model';
 import { Comment } from './comments/comment.model';
+import { PostDateService } from '../services/post-date.service';
 
 @Component({
   selector: 'app-post',
@@ -27,6 +28,7 @@ export class PostComponent implements OnInit {
       false
     ),
   ];
+  today!: Date;
 
   comments: Comment[] = [
     new Comment(1, 'naveen', "It's a Comment", false),
@@ -34,12 +36,16 @@ export class PostComponent implements OnInit {
     new Comment(3, 'toe', "It's a Comment", false),
   ];
 
-  constructor() {
+  constructor(private postDateService: PostDateService) {
   
   }
 
   ngOnInit(): void {
-    
+    this.getDate();
+  }
+
+  getDate() {
+    this.today = this.postDateService.getDate();
   }
 
   toggleLikeButton(index: number) {

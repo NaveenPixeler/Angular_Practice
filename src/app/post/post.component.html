@@ -14,6 +14,7 @@
       <div class="instagram-heart" [class.animate-heart]="post.anime"></div>
     </div>
     <div class="card-body">
+      <small class="opacity">{{ today | date: "MMMM d, yyyy" }}</small>
       <p class="card-text">{{ post.caption }}</p>
       <div class="icons-container d-flex align-items-center">
         <ng-container *ngIf="post.isLiked; else isNotLiked">
@@ -33,7 +34,7 @@
         <i class="bi bi-chat ms-2" role="button" (click)="toggleComment(i)"></i>
       </div>
       <app-likes> 
-        <small class="liked-people-text">Liked by naveen and 17 others</small>
+        <small class="liked-people-text opacity">Liked by naveen and 17 others</small>
       </app-likes>
     </div>
     <ng-container *ngIf="post.isCommentOpened">

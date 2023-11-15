@@ -15,6 +15,8 @@ import { FollowingComponent } from './profile/following/following.component';
 import { PostComponent } from './post/post.component';
 import { CommentsComponent } from './post/comments/comments.component';
 import { LikesComponent } from './post/likes/likes.component';
+import { PostDateService } from './services/post-date.service';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { LikesComponent } from './post/likes/likes.component';
     FollowingComponent,
     PostComponent,
     CommentsComponent,
-    LikesComponent
+    LikesComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { LikesComponent } from './post/likes/likes.component';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [PostDateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
