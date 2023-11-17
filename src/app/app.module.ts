@@ -4,10 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DirectivesComponent } from './directives/directives.component';
+import { DirectivesComponent } from './basics/directives/directives.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
-import { ManualComponent } from './manual/manual.component';
+import { ManualComponent } from './basics/manual/manual.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BioComponent } from './profile/bio/bio.component';
 import { FollowersComponent } from './profile/followers/followers.component';
@@ -16,13 +15,16 @@ import { PostComponent } from './post/post.component';
 import { CommentsComponent } from './post/comments/comments.component';
 import { LikesComponent } from './post/likes/likes.component';
 import { PostDateService } from './services/post-date.service';
-import { PipesComponent } from './pipes/pipes.component';
+import { PipesComponent } from './basics/pipes/pipes.component';
+import { HooksComponent } from './basics/hooks/hooks.component';
+import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
+import { BasicsComponent } from './basics/basics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectivesComponent,
-    HeaderComponent,
     ManualComponent,
     ProfileComponent,
     BioComponent,
@@ -31,13 +33,17 @@ import { PipesComponent } from './pipes/pipes.component';
     PostComponent,
     CommentsComponent,
     LikesComponent,
-    PipesComponent
+    PipesComponent,
+    HooksComponent,
+    HeaderComponent,
+    BasicsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [PostDateService],
   bootstrap: [AppComponent]

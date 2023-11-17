@@ -1,70 +1,10 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent
-  implements
-    OnChanges,
-    OnInit,
-    DoCheck,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
-    OnDestroy
-{
-  constructor() {
-    console.log('Constructor called');
-  }
+export class HeaderComponent {
 
-  @Input() inputMessage!: string;
-
-  message!: string;
-
-  ngOnChanges(): void {
-    console.log('ngOnChanges');
-  }
-
-  ngOnInit(): void {
-    console.log('ngOnInit');
-  }
-
-  ngDoCheck(): void {
-    console.log('ngDoCheck');
-  }
-
-  ngAfterContentInit(): void {
-    console.log('ngAfterContentInit');
-  }
-
-  ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked');
-  }
-
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked');
-  }
-
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy');
-  }
-  
 }
