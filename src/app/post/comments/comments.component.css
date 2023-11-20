@@ -1,6 +1,10 @@
 .comments-container {
-    position: relative;
-}   
+  position: relative;
+}
+
+.add-btn {
+  width: 38px !important;
+}
 
 .tooltip-box {
   position: absolute;
