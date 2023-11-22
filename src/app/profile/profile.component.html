@@ -1,4 +1,41 @@
-<p>profile works!</p>
-<app-bio></app-bio>
-<app-followers></app-followers>
-<app-following></app-following>
+<header>
+  <div class="container">
+    <div class="profile">
+      <div class="profile-image">
+        <img
+          src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces"
+          alt=""
+        />
+      </div>
+
+      <div class="profile-user-settings d-flex justify-content-between">
+        <h1 class="profile-user-name">c_naveen</h1>
+        <button class="btn profile-edit-btn">Edit Profile</button>
+      </div>
+
+      <div class="profile-stats mt-5">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['followers', { userId: 1 }]" routerLinkActive="active"
+              >5 Followers</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['following', { userId: 1 } ]" routerLinkActive="active"
+              >7 Following</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <app-bio></app-bio>
+    </div>
+    <!-- End of profile section -->
+  </div>
+  <!-- End of container -->
+</header>
+<div class="dot-border-dark border-top d-none d-sm-block">
+  <router-outlet></router-outlet>
+</div>
+<!-- <app-followers></app-followers>
+<app-following></app-following> -->
